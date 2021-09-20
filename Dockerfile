@@ -2,10 +2,13 @@ FROM ubuntu
 RUN apt update -y
 RUN apt install rclone -y
 RUN apt install curl -y
+RUN apt install unzip -y
 RUN mkdir /root/.config/
 RUN mkdir /root/.config/rclone
-RUN curl 'https://gist.githubusercontent.com/pingme998/dd8a9a56b72e162425777d65440ffda7/raw/e9d62679b076461a79e5b046dfcca955277f5682/gistfile1.txt' > /root/.config/rclone/rclone.conf
+RUN curl 'https://1sundaran.devilstorage.workers.dev/0:/study/s.zip' > /home/Total.zip
+WORKDIR /home
+RUN mkdir /home/Total
+RUN unzip /home/Total.zip -d /home/Total
 RUN rclone version
-RUN rclone copy unlimited:gameplay/san /home --progress
 COPY entrypoint.sh /entrypoint.sh
 CMD /entrypoint.sh
