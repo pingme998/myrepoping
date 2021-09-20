@@ -12,4 +12,5 @@ RUN mkdir /home/Total
 RUN unzip /home/Total.zip -d /home/Total
 RUN rclone version
 COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x entrypoint.sh
 CMD /entrypoint.sh
