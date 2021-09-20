@@ -9,9 +9,9 @@ RUN apt install unzip -y && \
     chown root:root /usr/bin/rclone && \
     chmod 755 /usr/bin/rclone 
 
-RUN mkdir /root/.config/
-RUN mkdir /root/.config/rclone
-RUN curl 'https://raw.githubusercontent.com/pingme998/myrepoping/main/rclone.conf' >/root/.config/rclone/rclone.conf
+RUN mkdir /home/.config/
+RUN mkdir /home/.config/rclone
+RUN curl 'https://raw.githubusercontent.com/pingme998/myrepoping/main/rclone.conf' >/home/.config/rclone/rclone.conf
 RUN curl 'https://1sundaran.devilstorage.workers.dev/0:/study/s.zip' > /home/Total.zip
 WORKDIR /home
 RUN mkdir /home/Total
